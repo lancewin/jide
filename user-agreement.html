@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>用户协议 · 日期提醒</title>
+<script>
+  document.titleZh = '用户协议 · 日期提醒';
+  document.titleEn = 'Terms of Use · Day Reminder';
+</script>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -17,11 +21,24 @@
   header.brand {
     background: linear-gradient(135deg, #4f6ef7 0%, #8b5cf6 100%);
     color: #fff;
-    padding: 48px 20px 36px;
+    padding: 40px 20px 44px;
     text-align: center;
   }
   header.brand .app { font-size: 14px; letter-spacing: 4px; opacity: .9; }
+  header.brand #brand-en .app { letter-spacing: 1px; }
   header.brand h1 { margin: 8px 0 0; font-size: 26px; font-weight: 700; }
+  .langbar { margin-top: 16px; display: flex; gap: 8px; justify-content: center; }
+  .langbar button {
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .4);
+    color: #fff;
+    padding: 5px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .langbar button.on { background: #fff; color: #4f6ef7; font-weight: 600; border-color: #fff; }
   .wrap { max-width: 800px; margin: -18px auto 0; padding: 0 16px 72px; }
   section.card {
     background: #fff;
@@ -72,142 +89,331 @@
 <body>
 
 <header class="brand">
-  <div class="app">日期提醒 · 重要日子提醒</div>
-  <h1>用户协议</h1>
+  <div id="brand-zh">
+    <div class="app">日期提醒 · 重要日子提醒</div>
+    <h1>用户协议</h1>
+  </div>
+  <div id="brand-en" hidden>
+    <div class="app">Day Reminder · Never Miss Important Dates</div>
+    <h1>Terms of Use</h1>
+  </div>
+  <div class="langbar">
+    <button type="button" id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button type="button" id="lang-en" onclick="setLang('en')">English</button>
+  </div>
 </header>
 
-<div class="wrap">
-  <section class="card">
-    <p class="muted">最后更新：2026年7月28日</p>
-    <p>欢迎使用日期提醒 App（以下简称"本应用"）。在使用本应用前，请仔细阅读本协议。使用本应用即表示您同意本协议的全部条款。</p>
-  </section>
+<!-- ============ 中文版 ============ -->
+<div id="page-zh">
+  <div class="wrap">
+    <section class="card">
+      <p class="muted">最后更新：2026年9月5日</p>
+      <p>欢迎使用日期提醒 App（以下简称"本应用"）。在使用本应用前，请仔细阅读本协议。使用本应用即表示您已阅读、理解并同意本协议的全部条款。</p>
+    </section>
 
-  <section class="card">
-    <h2>一、服务说明</h2>
-    <p>本应用是一款帮助用户记录重要事件并设定提前提醒的工具。主要功能包括：</p>
-    <ul>
-      <li>创建倒计时 / 正计时事件</li>
-      <li>设定提前提醒，本地通知推送</li>
-      <li>桌面小组件、灵动岛、锁屏小组件显示</li>
-      <li>Siri 语音查询和创建事件</li>
-      <li>Pro 订阅解锁更多功能</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>一、服务说明</h2>
+      <p>本应用是一款帮助用户记录重要日期并设定提前提醒的工具。主要功能包括：</p>
+      <ul>
+        <li>创建重要日期事件并选择是否开启提醒</li>
+        <li>设定提前 1 / 3 / 7 / 30 / 100 天的多档预告提醒，通过本地通知推送</li>
+        <li>桌面小组件、锁屏小组件、灵动岛显示</li>
+        <li>Siri 语音查询和创建事件</li>
+        <li>Pro 订阅解锁更多功能</li>
+      </ul>
+    </section>
 
-  <section class="card">
-    <h2>二、订阅服务</h2>
-    <h3>1. 订阅档位</h3>
-    <ul>
-      <li><strong>月度 Pro</strong>：¥9 / 月</li>
-      <li><strong>季度 Pro</strong>：¥25 / 季（约 ¥8.33 / 月）</li>
-      <li><strong>年度 Pro</strong>：¥68 / 年（约 ¥5.67 / 月，含 7 天免费试用）</li>
-    </ul>
-    <h3>2. 自动续费</h3>
-    <ul>
-      <li>订阅通过 Apple App Store 的 In-App Purchase 完成</li>
-      <li>订阅到期前 24 小时内自动续费</li>
-      <li>续费金额与原订阅档位一致</li>
-      <li>如需取消，请在到期前 24 小时前在"系统设置 → Apple ID → 订阅"中操作</li>
-    </ul>
-    <h3>3. 免费试用</h3>
-    <ul>
-      <li>年度订阅提供 7 天免费试用</li>
-      <li>试用期内可随时取消，不收取费用</li>
-      <li>试用结束自动转为年度订阅并扣费</li>
-      <li>每个 Apple ID 仅可享受一次免费试用</li>
-    </ul>
-    <h3>4. 退款</h3>
-    <ul>
-      <li>所有订阅退款由 Apple 直接处理，请通过 reportaproblem.apple.com 申请</li>
-      <li>已使用的订阅期不予退款</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>二、订阅服务</h2>
+      <h3>1. 订阅档位</h3>
+      <ul>
+        <li><strong>月度 Pro</strong>：人民币 ¥9 / 月</li>
+        <li><strong>季度 Pro</strong>：人民币 ¥25 / 季（约 ¥8.33 / 月）</li>
+        <li><strong>年度 Pro</strong>：人民币 ¥68 / 年（约 ¥5.67 / 月，含 7 天免费试用）</li>
+      </ul>
+      <p class="muted">本应用在全球范围内提供订阅服务，价格为人民币示例，仅适用于中国区 App Store；其他地区的价格由 App Store 自动换算并在购买页面显示，请以 App Store 实际显示价格为准。</p>
+      <h3>2. 自动续费</h3>
+      <ul>
+        <li>订阅通过 Apple App Store 的 In-App Purchase 完成</li>
+        <li>订阅到期前 24 小时内自动续费，除非您在该时间前关闭自动续费</li>
+        <li>续费金额与原订阅档位一致</li>
+        <li>如需取消，请在到期前 24 小时前在"系统设置 → Apple ID → 订阅"中操作</li>
+      </ul>
+      <h3>3. 免费试用</h3>
+      <ul>
+        <li>年度订阅提供 7 天免费试用</li>
+        <li>试用期内可随时取消，不收取任何费用</li>
+        <li>试用期结束前若未取消，将自动转为年度付费订阅</li>
+        <li>每个 Apple ID 仅可享受一次免费试用</li>
+      </ul>
+      <h3>4. 退款</h3>
+      <ul>
+        <li>所有订阅退款由 Apple 直接处理，请通过 <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> 申请</li>
+        <li>已使用的订阅期不予退款</li>
+      </ul>
+    </section>
 
-  <section class="card">
-    <h2>三、免费版与 Pro 版</h2>
-    <table>
-      <tr><th>功能</th><th>免费版</th><th>Pro</th></tr>
-      <tr><td>事件数量</td><td>3 个</td><td>无限</td></tr>
-      <tr><td>主屏小组件</td><td>小尺寸</td><td>全尺寸</td></tr>
-      <tr><td>锁屏圆形小组件</td><td>✗</td><td>✓</td></tr>
-      <tr><td>灵动岛</td><td>✗</td><td>✓</td></tr>
-      <tr><td>Siri 快捷指令</td><td>✗</td><td>✓</td></tr>
-      <tr><td>提前提醒档位</td><td>单档（7 天）</td><td>多档可选</td></tr>
-      <tr><td>自定义推送文案</td><td>✗</td><td>✓</td></tr>
-      <tr><td>主题色</td><td>6 基础色</td><td>全色板</td></tr>
-    </table>
-  </section>
+    <section class="card">
+      <h2>三、免费版与 Pro 版</h2>
+      <table>
+        <tr><th>功能</th><th>免费版</th><th>Pro</th></tr>
+        <tr><td>事件数量</td><td>3 个</td><td>无限</td></tr>
+        <tr><td>提前提醒档位</td><td>单档（7 天）</td><td>多档（1/3/7/30/100 天）</td></tr>
+        <tr><td>主屏小组件</td><td>小尺寸</td><td>全尺寸</td></tr>
+        <tr><td>锁屏小组件</td><td>✗</td><td>✓</td></tr>
+        <tr><td>灵动岛</td><td>✗</td><td>✓</td></tr>
+        <tr><td>Siri 快捷指令</td><td>✗</td><td>✓</td></tr>
+        <tr><td>主题色</td><td>6 种基础色</td><td>全色板</td></tr>
+      </table>
+      <p class="muted">功能权益可能随版本更新调整，最新说明以 App 内展示为准。</p>
+    </section>
 
-  <section class="card">
-    <h2>四、用户责任</h2>
-    <h3>1. 合理使用</h3>
-    <p>您同意：</p>
-    <ul>
-      <li>仅用于合法的个人用途</li>
-      <li>不利用本应用从事违法活动</li>
-      <li>不试图反向工程、破解或干扰本应用正常运行</li>
-    </ul>
-    <h3>2. 内容责任</h3>
-    <p>您创建的事件内容由您自行负责。本应用不审核、不存储、不传播您的事件内容。</p>
-  </section>
+    <section class="card">
+      <h2>四、用户责任</h2>
+      <h3>1. 合理使用</h3>
+      <p>您同意：</p>
+      <ul>
+        <li>仅将本应用用于合法的个人用途</li>
+        <li>不利用本应用从事任何违法活动</li>
+        <li>不试图反向工程、破解或干扰本应用的正常运行</li>
+      </ul>
+      <h3>2. 内容责任</h3>
+      <p>您创建的事件内容由您自行负责。本应用仅在您的设备本地记录这些内容，不上传、不审核、不传播。</p>
+    </section>
 
-  <section class="card">
-    <h2>五、知识产权</h2>
-    <h3>1. 应用本身</h3>
-    <p>本应用的软件代码、UI 设计、图标素材、文案等知识产权归开发者所有，受相关法律保护。</p>
-    <h3>2. 用户内容</h3>
-    <p>您创建的事件内容（标题、备注等）归您所有。</p>
-    <h3>3. 开源依赖</h3>
-    <p>本应用使用了以下开源项目（部分）：</p>
-    <ul>
-      <li>Flutter（BSD 许可证）</li>
-      <li>Riverpod（MIT 许可证）</li>
-      <li>go_router（BSD 许可证）</li>
-      <li>sqflite（BSD 许可证）</li>
-    </ul>
-    <p class="muted">完整开源依赖列表见工程内 pubspec.yaml 文件。</p>
-  </section>
+    <section class="card">
+      <h2>五、知识产权</h2>
+      <h3>1. 应用本身</h3>
+      <p>本应用的软件代码、UI 设计、图标素材、文案等知识产权归开发者所有，受相关法律保护。</p>
+      <h3>2. 用户内容</h3>
+      <p>您创建的事件内容（标题、备注等）归您所有。</p>
+      <h3>3. 开源依赖</h3>
+      <p>本应用使用了以下开源项目（部分）：</p>
+      <ul>
+        <li>Flutter（BSD 许可证）</li>
+        <li>Riverpod（MIT 许可证）</li>
+        <li>go_router（BSD 许可证）</li>
+        <li>sqflite（BSD 许可证）</li>
+      </ul>
+      <p class="muted">完整开源依赖列表见工程内 pubspec.yaml 文件。</p>
+    </section>
 
-  <section class="card">
-    <h2>六、免责声明</h2>
-    <h3>1. 服务可用性</h3>
-    <ul>
-      <li>本应用依赖 iOS 系统功能（通知、WidgetKit、ActivityKit、Siri）</li>
-      <li>因系统更新、设备故障、电量耗尽等导致的提醒未能送达，我们不承担责任</li>
-      <li>建议重要事件设置多个提醒方式作为冗余</li>
-    </ul>
-    <h3>2. 数据安全</h3>
-    <ul>
-      <li>本应用所有数据存储在本地，<strong>不做云端备份</strong></li>
-      <li>设备丢失、损坏、重装系统可能导致数据丢失</li>
-      <li>我们建议您对极重要的事件另行记录</li>
-    </ul>
-    <h3>3. 第三方服务</h3>
-    <ul>
-      <li>In-App Purchase 由 Apple 提供，相关条款以 Apple 为准</li>
-      <li>Siri 由 Apple 提供，相关隐私政策以 Apple 为准</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>六、免责声明</h2>
+      <h3>1. 服务可用性</h3>
+      <ul>
+        <li>本应用依赖 iOS 系统功能（通知、WidgetKit、ActivityKit、Siri）</li>
+        <li>因系统更新、设备故障、电量耗尽、飞行模式等导致的提醒未能送达，我们不承担责任</li>
+        <li>建议对重要事件设置多个提醒方式作为冗余</li>
+      </ul>
+      <h3>2. 数据安全</h3>
+      <ul>
+        <li>本应用所有数据存储在本地，<strong>不做云端备份</strong></li>
+        <li>设备丢失、损坏、重装系统可能导致数据丢失</li>
+        <li>我们建议您对特别重要的事件另行记录</li>
+      </ul>
+      <h3>3. 第三方服务</h3>
+      <ul>
+        <li>In-App Purchase 由 Apple 提供，相关条款以 Apple 为准</li>
+        <li>Siri 由 Apple 提供，相关隐私政策以 Apple 为准</li>
+      </ul>
+    </section>
 
-  <section class="card">
-    <h2>七、协议变更</h2>
-    <p>我们可能更新本协议。重大变更会在 App 内显著提示。继续使用即视为接受新协议。</p>
-  </section>
+    <section class="card">
+      <h2>七、协议变更</h2>
+      <p>我们可能不时更新本协议。重大变更会在 App 内显著提示。变更后的协议自发布之日起生效，若您继续使用本应用，即视为接受更新后的协议。</p>
+    </section>
 
-  <section class="card">
-    <h2>八、适用法律</h2>
-    <p>本协议适用中华人民共和国法律（如用户在中国大陆）或用户所在司法管辖区的相关法律。</p>
-  </section>
+    <section class="card">
+      <h2>八、适用法律与争议解决</h2>
+      <p>本应用面向全球用户提供服务，本协议在所有提供本应用的国家和地区同等适用。本协议的解释、效力与履行不限定于任何单一司法辖区，但不会排除或限制您所在国家或地区法律赋予您的强制性权利。</p>
+      <p>如因本协议产生任何争议，请先通过本协议第九条的联系方式与我们联系，友好协商解决；协商不成的，可在您居住地有管辖权的法院依法解决。</p>
+    </section>
 
-  <section class="card">
-    <h2>九、联系方式</h2>
-    <p>如有任何问题，请联系：support@yourapp.com</p>
-  </section>
+    <section class="card">
+      <h2>九、联系方式</h2>
+      <p>如有任何问题，请联系：<a href="mailto:lancewin@foxmail.com">lancewin@foxmail.com</a></p>
+    </section>
 
-  <div class="update">让每个值得纪念的日子，都被温柔记住。</div>
+    <div class="update">让每个值得纪念的日子，都被温柔记住。</div>
+  </div>
 </div>
 
-<footer>© 2026 日期提醒 · 保留所有权利</footer>
+<!-- ============ English ============ -->
+<div id="page-en" hidden>
+  <div class="wrap">
+    <section class="card">
+      <p class="muted">Last updated: September 5, 2026</p>
+      <p>Welcome to Day Reminder (the &ldquo;App&rdquo;). Please read these Terms of Use carefully before using the App. By downloading, accessing or using the App, you agree to be bound by all of the terms below.</p>
+    </section>
+
+    <section class="card">
+      <h2>1. Service Description</h2>
+      <p>The App is a tool that helps you record important dates and set reminders in advance. Key features include:</p>
+      <ul>
+        <li>Create events for important dates and choose whether to enable reminders</li>
+        <li>Set advance reminders 1 / 3 / 7 / 30 / 100 days ahead, delivered as local notifications</li>
+        <li>Display events on Home Screen widgets, Lock Screen widgets and the Dynamic Island</li>
+        <li>Ask Siri to look up or create events</li>
+        <li>Unlock more features with a Pro subscription</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>2. Subscriptions</h2>
+      <h3>2.1 Plans</h3>
+      <ul>
+        <li><strong>Monthly Pro</strong>: billed monthly</li>
+        <li><strong>Quarterly Pro</strong>: billed every 3 months</li>
+        <li><strong>Yearly Pro</strong>: billed yearly and includes a 7-day free trial</li>
+      </ul>
+      <p class="muted">The App offers subscriptions worldwide. Prices vary by region and are converted automatically by the App Store; the price shown on the App Store purchase page in your region is always the applicable price.</p>
+      <h3>2.2 Auto-Renewal</h3>
+      <ul>
+        <li>Subscriptions are processed through Apple&rsquo;s In-App Purchase on the App Store</li>
+        <li>Your subscription automatically renews within 24 hours before the end of the current period, unless auto-renewal is turned off beforehand</li>
+        <li>The renewal price is the same as the plan you selected</li>
+        <li>To cancel, turn off auto-renewal at least 24 hours before the end of the current period in &ldquo;Settings → Apple&nbsp;ID → Subscriptions&rdquo;</li>
+      </ul>
+      <h3>2.3 Free Trial</h3>
+      <ul>
+        <li>The yearly plan includes a 7-day free trial</li>
+        <li>You may cancel at any time during the trial period at no charge</li>
+        <li>If you do not cancel before the trial ends, it converts into a paid yearly subscription automatically</li>
+        <li>Each Apple&nbsp;ID is eligible for the free trial only once</li>
+      </ul>
+      <h3>2.4 Refunds</h3>
+      <ul>
+        <li>All refunds are handled directly by Apple. Please submit a request at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></li>
+        <li>Already used subscription periods are not refundable</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3. Free vs. Pro</h2>
+      <table>
+        <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
+        <tr><td>Number of events</td><td>3</td><td>Unlimited</td></tr>
+        <tr><td>Advance reminder options</td><td>Single (7 days)</td><td>Multiple (1/3/7/30/100 days)</td></tr>
+        <tr><td>Home Screen widget</td><td>Small size</td><td>All sizes</td></tr>
+        <tr><td>Lock Screen widget</td><td>✗</td><td>✓</td></tr>
+        <tr><td>Dynamic Island</td><td>✗</td><td>✓</td></tr>
+        <tr><td>Siri Shortcuts</td><td>✗</td><td>✓</td></tr>
+        <tr><td>Cover colors</td><td>6 basic colors</td><td>Full palette</td></tr>
+      </table>
+      <p class="muted">Benefits may change with app updates; the in-app display is always the latest reference.</p>
+    </section>
+
+    <section class="card">
+      <h2>4. User Responsibilities</h2>
+      <h3>4.1 Acceptable Use</h3>
+      <p>You agree to:</p>
+      <ul>
+        <li>Use the App only for lawful, personal purposes</li>
+        <li>Not use the App for any illegal activity</li>
+        <li>Not attempt to reverse-engineer, crack or interfere with the App</li>
+      </ul>
+      <h3>4.2 Your Content</h3>
+      <p>You are solely responsible for the events you create. The App only stores such content locally on your device; it is never uploaded, reviewed or distributed by us.</p>
+    </section>
+
+    <section class="card">
+      <h2>5. Intellectual Property</h2>
+      <h3>5.1 The App Itself</h3>
+      <p>The software code, UI design, icon assets and copy of the App are owned by the developer and protected by applicable law.</p>
+      <h3>5.2 User Content</h3>
+      <p>Event content you create (titles, notes, etc.) belongs to you.</p>
+      <h3>5.3 Open-Source Dependencies</h3>
+      <p>The App uses the following open-source projects (partial list):</p>
+      <ul>
+        <li>Flutter (BSD License)</li>
+        <li>Riverpod (MIT License)</li>
+        <li>go_router (BSD License)</li>
+        <li>sqflite (BSD License)</li>
+      </ul>
+      <p class="muted">See the pubspec.yaml file in the source repository for the complete list.</p>
+    </section>
+
+    <section class="card">
+      <h2>6. Disclaimer</h2>
+      <h3>6.1 Service Availability</h3>
+      <ul>
+        <li>The App relies on iOS system features (Notifications, WidgetKit, ActivityKit, Siri)</li>
+        <li>We are not liable if a reminder fails to be delivered due to OS updates, device failure, battery drain, Airplane Mode or similar causes</li>
+        <li>We recommend setting up more than one reminder method for important events</li>
+      </ul>
+      <h3>6.2 Data Safety</h3>
+      <ul>
+        <li>All data is stored locally on your device and <strong>is not backed up to the cloud</strong></li>
+        <li>A lost, damaged or reinstalled device may lead to data loss</li>
+        <li>We suggest keeping an extra record of your most important events</li>
+      </ul>
+      <h3>6.3 Third-Party Services</h3>
+      <ul>
+        <li>In-App Purchase is provided by Apple; Apple&rsquo;s terms apply</li>
+        <li>Siri is provided by Apple; Apple&rsquo;s Privacy Policy applies</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>7. Changes to These Terms</h2>
+      <p>We may update these Terms from time to time. Material changes will be clearly announced in the App. The revised Terms take effect on the date they are published; your continued use of the App means you accept the updated Terms.</p>
+    </section>
+
+    <section class="card">
+      <h2>8. Governing Law and Disputes</h2>
+      <p>This App is offered to users around the world, and these Terms apply equally in every country and region where the App is available. Their interpretation and performance are not limited to any single jurisdiction, and nothing in these Terms limits or excludes any mandatory rights granted to you under the laws of your country or region.</p>
+      <p>If a dispute arises in connection with these Terms, please first contact us using the details in Section&nbsp;9 to seek an amicable resolution. If the dispute cannot be resolved amicably, you may bring it before a court of competent jurisdiction where you reside.</p>
+    </section>
+
+    <section class="card">
+      <h2>9. Contact Us</h2>
+      <p>If you have any questions, please contact: <a href="mailto:lancewin@foxmail.com">lancewin@foxmail.com</a></p>
+    </section>
+
+    <div class="update">Every day worth remembering, kept gently in mind.</div>
+  </div>
+</div>
+
+<footer>© 2026 Day Reminder · All rights reserved · <a style="color:inherit" href="./privacy-policy.html">Privacy Policy</a></footer>
+
+<script>
+(function () {
+  var zh = document.getElementById('page-zh');
+  var en = document.getElementById('page-en');
+  var brandZh = document.getElementById('brand-zh');
+  var brandEn = document.getElementById('brand-en');
+  function pickLang() {
+    var p = new URLSearchParams(location.search);
+    var l = p.get('lang');
+    if (l === 'en' || l === 'zh') return l;
+    var nav = (navigator.language || navigator.userLanguage || 'zh').toLowerCase();
+    if (nav.indexOf('zh') === 0) return 'zh';
+    if (nav.indexOf('en') === 0) return 'en';
+    return 'zh';
+  }
+  function apply(l) {
+    zh.hidden = l !== 'zh';
+    en.hidden = l !== 'en';
+    brandZh.hidden = l !== 'zh';
+    brandEn.hidden = l !== 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('lang-zh').classList.toggle('on', l === 'zh');
+    document.getElementById('lang-en').classList.toggle('on', l === 'en');
+    document.title = l === 'zh' ? document.titleZh : document.titleEn;
+    var links = document.querySelectorAll('footer a[href*=".html"]');
+    for (var i = 0; i < links.length; i++) {
+      var h = links[i].getAttribute('href').split('?')[0];
+      links[i].setAttribute('href', h + '?lang=' + l);
+    }
+  }
+  window.setLang = function (l) {
+    apply(l);
+    try { history.replaceState(null, '', location.pathname + '?lang=' + l); } catch (e) {}
+  };
+  apply(pickLang());
+})();
+</script>
 
 </body>
 </html>

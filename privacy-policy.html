@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>隐私政策 · 日期提醒</title>
+<script>
+  document.titleZh = '隐私政策 · 日期提醒';
+  document.titleEn = 'Privacy Policy · Day Reminder';
+</script>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -17,11 +21,24 @@
   header.brand {
     background: linear-gradient(135deg, #4f6ef7 0%, #8b5cf6 100%);
     color: #fff;
-    padding: 48px 20px 36px;
+    padding: 40px 20px 44px;
     text-align: center;
   }
   header.brand .app { font-size: 14px; letter-spacing: 4px; opacity: .9; }
+  header.brand #brand-en .app { letter-spacing: 1px; }
   header.brand h1 { margin: 8px 0 0; font-size: 26px; font-weight: 700; }
+  .langbar { margin-top: 16px; display: flex; gap: 8px; justify-content: center; }
+  .langbar button {
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .4);
+    color: #fff;
+    padding: 5px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .langbar button.on { background: #fff; color: #4f6ef7; font-weight: 600; border-color: #fff; }
   .wrap { max-width: 800px; margin: -18px auto 0; padding: 0 16px 72px; }
   section.card {
     background: #fff;
@@ -39,6 +56,7 @@
   h3 { font-size: 16px; margin: 20px 0 8px; color: #1f2430; }
   p { margin: 8px 0; }
   ul { margin: 8px 0; padding-left: 22px; }
+  ol { margin: 8px 0; padding-left: 22px; }
   li { margin: 5px 0; }
   .muted { color: #8a90a0; }
   .update {
@@ -62,146 +80,335 @@
 <body>
 
 <header class="brand">
-  <div class="app">日期提醒 · 重要日子提醒</div>
-  <h1>隐私政策</h1>
+  <div id="brand-zh">
+    <div class="app">日期提醒 · 重要日子提醒</div>
+    <h1>隐私政策</h1>
+  </div>
+  <div id="brand-en" hidden>
+    <div class="app">Day Reminder · Never Miss Important Dates</div>
+    <h1>Privacy Policy</h1>
+  </div>
+  <div class="langbar">
+    <button type="button" id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button type="button" id="lang-en" onclick="setLang('en')">English</button>
+  </div>
 </header>
 
-<div class="wrap">
-  <section class="card">
-    <p class="muted">最后更新：2026年7月28日</p>
-    <p>我们深知个人信息对您的重要性，并会尽全力保护您的隐私。本隐私政策说明我们如何收集、使用、存储和保护您的信息。</p>
-  </section>
+<!-- ============ 中文版 ============ -->
+<div id="page-zh">
+  <div class="wrap">
+    <section class="card">
+      <p class="muted">最后更新：2026年9月5日</p>
+      <p>我们深知个人信息对您的重要性，并会尽全力保护您的隐私。本隐私政策说明我们如何收集、使用、存储和保护您的信息。无论您在哪个国家或地区使用本应用，本政策均同等适用。</p>
+    </section>
 
-  <section class="card">
-    <h2>一、我们收集的信息</h2>
-    <h3>1. 您主动提供的信息</h3>
-    <ul>
-      <li><strong>事件信息</strong>：您创建的事件，包括标题、日期、备注、Emoji、主题色等</li>
-      <li><strong>设置偏好</strong>：默认推送时间、主题模式、应用图标选择</li>
-    </ul>
-    <h3>2. 自动收集的信息</h3>
-    <ul>
-      <li><strong>通知权限状态</strong>：用于判断是否可以发送本地通知</li>
-      <li><strong>订阅状态</strong>：您的 In-App Purchase 订阅档位和有效期（仅存储在本地）</li>
-    </ul>
-    <h3>3. 我们不收集的信息</h3>
-    <ul>
-      <li>我们不收集您的身份信息（无需登录、无需账户）</li>
-      <li>我们不上传您的联系人、相册、位置信息</li>
-      <li>我们不追踪您的使用行为</li>
-      <li>我们不接入任何第三方分析 SDK</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>一、我们收集的信息</h2>
+      <h3>1. 您主动提供的信息</h3>
+      <ul>
+        <li><strong>事件信息</strong>：您创建的事件，包括标题、日期、备注、Emoji、主题色等</li>
+        <li><strong>设置偏好</strong>：默认推送时间、主题模式、应用图标选择</li>
+      </ul>
+      <h3>2. 自动收集的信息</h3>
+      <ul>
+        <li><strong>通知权限状态</strong>：用于判断是否可以发送本地通知</li>
+        <li><strong>订阅状态</strong>：您的 In-App Purchase 订阅档位和有效期（仅存储在本地）</li>
+      </ul>
+      <h3>3. 我们不收集的信息</h3>
+      <ul>
+        <li>我们不收集您的身份信息（无需登录、无需账户）</li>
+        <li>我们不上传您的联系人、相册、位置信息</li>
+        <li>我们不追踪您的使用行为</li>
+        <li>我们不接入任何第三方分析 SDK</li>
+      </ul>
+    </section>
 
-  <section class="card">
-    <h2>二、信息的使用</h2>
-    <p>我们收集的信息仅用于：</p>
-    <ol>
-      <li>在 App 内显示您创建的事件</li>
-      <li>在您设定的提醒时间发送本地通知</li>
-      <li>在桌面小组件和灵动岛显示事件</li>
-      <li>在 Siri 语音问答中回答您的问题</li>
-      <li>判定您的 Pro 订阅状态以解锁对应功能</li>
-    </ol>
-  </section>
+    <section class="card">
+      <h2>二、信息的使用</h2>
+      <p>我们收集的信息仅用于：</p>
+      <ol>
+        <li>在 App 内显示您创建的事件</li>
+        <li>在您设定的提醒时间发送本地通知</li>
+        <li>在桌面小组件、锁屏小组件和灵动岛显示事件</li>
+        <li>在 Siri 语音问答中回答您的问题</li>
+        <li>判定您的 Pro 订阅状态以解锁对应功能</li>
+      </ol>
+    </section>
 
-  <section class="card">
-    <h2>三、信息的存储</h2>
-    <h3>1. 存储位置</h3>
-    <ul>
-      <li><strong>所有数据均存储在您的设备本地</strong></li>
-      <li>事件数据存储在 App 的 SQLite 数据库</li>
-      <li>订阅状态存储在 App 的 SharedPreferences</li>
-      <li>桌面小组件和灵动岛通过 iOS App Group 共享存储读取数据</li>
-    </ul>
-    <h3>2. 数据同步</h3>
-    <ul>
-      <li>本版本<strong>不使用 iCloud 同步</strong></li>
-      <li>不向我们的服务器发送任何数据</li>
-      <li>换机或重装 App 后数据不会迁移（请知悉）</li>
-    </ul>
-    <h3>3. 数据保留</h3>
-    <ul>
-      <li>数据保留至您主动删除事件或卸载 App</li>
-      <li>卸载 App 后所有数据将被自动清除</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>三、信息的存储</h2>
+      <h3>1. 存储位置</h3>
+      <ul>
+        <li><strong>所有数据均存储在您的设备本地</strong></li>
+        <li>事件数据存储在 App 的 SQLite 数据库</li>
+        <li>订阅状态存储在 App 的本地偏好设置中</li>
+        <li>桌面小组件和灵动岛通过 iOS App Group 共享存储读取数据</li>
+      </ul>
+      <h3>2. 数据同步</h3>
+      <ul>
+        <li>本版本<strong>不使用 iCloud 同步</strong></li>
+        <li>不向我们的服务器发送任何数据</li>
+        <li>换机或重装 App 后数据不会迁移（请知悉）</li>
+      </ul>
+      <h3>3. 数据保留</h3>
+      <ul>
+        <li>数据保留至您主动删除事件或卸载 App</li>
+        <li>卸载 App 后所有数据将被自动清除</li>
+      </ul>
+    </section>
 
-  <section class="card">
-    <h2>四、信息的共享</h2>
-    <p>我们<strong>不会</strong>与任何第三方共享您的信息，包括：</p>
-    <ul>
-      <li>不与广告商共享</li>
-      <li>不与数据分析公司共享</li>
-      <li>不与其他用户共享</li>
-    </ul>
-    <p>唯一的例外：当您使用 Apple 的 In-App Purchase 完成订阅购买时，Apple 会处理您的支付信息，相关交易由 Apple 直接管理，我们仅收到订阅状态的回调。</p>
-  </section>
+    <section class="card">
+      <h2>四、信息的共享</h2>
+      <p>我们<strong>不会</strong>与任何第三方共享您的信息，包括：</p>
+      <ul>
+        <li>不与广告商共享</li>
+        <li>不与数据分析公司共享</li>
+        <li>不与其他用户共享</li>
+      </ul>
+      <p>唯一的例外：当您使用 Apple 的 In-App Purchase 完成订阅购买时，Apple 会处理您的支付信息，相关交易由 Apple 直接管理，我们仅收到订阅状态的回调。</p>
+    </section>
 
-  <section class="card">
-    <h2>五、通知权限</h2>
-    <ul>
-      <li>我们仅在您主动创建带提醒的事件时请求通知权限</li>
-      <li>您可以随时在"系统设置 → 通知 → 日期提醒"中关闭通知</li>
-      <li>关闭通知不影响 App 其他功能的使用</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>五、通知权限</h2>
+      <ul>
+        <li>我们仅在您主动创建带提醒的事件时请求通知权限</li>
+        <li>您可以随时在"系统设置 → 通知 → 日期提醒"中关闭通知</li>
+        <li>关闭通知不影响 App 其他功能的使用</li>
+      </ul>
+    </section>
 
-  <section class="card">
-    <h2>六、Siri 权限</h2>
-    <ul>
-      <li>当您使用 Siri 查询事件时，Siri 会处理您的语音指令</li>
-      <li>语音处理由 Apple 完成，我们不接收也不存储您的语音数据</li>
-      <li>您可以在"系统设置 → Siri 与搜索"中管理此权限</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>六、Siri 权限</h2>
+      <ul>
+        <li>当您使用 Siri 查询事件时，Siri 会处理您的语音指令</li>
+        <li>语音处理由 Apple 完成，我们不接收也不存储您的语音数据</li>
+        <li>您可以在"系统设置 → Siri 与搜索"中管理此权限</li>
+      </ul>
+    </section>
 
-  <section class="card">
-    <h2>七、儿童隐私</h2>
-    <p>本 App 不针对 13 岁以下儿童，我们不会故意收集儿童的个人信息。</p>
-  </section>
+    <section class="card">
+      <h2>七、儿童隐私</h2>
+      <p>本 App 不针对 13 岁以下儿童，我们不会故意收集儿童的个人信息。</p>
+    </section>
 
-  <section class="card">
-    <h2>八、您的权利</h2>
-    <p>您有权：</p>
-    <ul>
-      <li><strong>访问</strong>您存储在 App 中的所有数据（直接在 App 中查看）</li>
-      <li><strong>删除</strong>任何事件（在 App 内删除）</li>
-      <li><strong>卸载</strong> App 以清除所有本地数据</li>
-      <li><strong>管理订阅</strong>在"系统设置 → Apple ID → 订阅"中取消</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>八、您的权利</h2>
+      <p>您有权：</p>
+      <ul>
+        <li><strong>访问</strong>您存储在 App 中的所有数据（直接在 App 中查看）</li>
+        <li><strong>删除</strong>任何事件（在 App 内删除）</li>
+        <li><strong>卸载</strong> App 以清除所有本地数据</li>
+        <li><strong>管理订阅</strong>在"系统设置 → Apple ID → 订阅"中取消或更改</li>
+      </ul>
+    </section>
 
-  <section class="card">
-    <h2>九、隐私政策更新</h2>
-    <p>我们可能会更新本隐私政策。更新后会在 App 内提示您，并更新本页面的"最后更新"日期。</p>
-  </section>
+    <section class="card">
+      <h2>九、隐私政策更新</h2>
+      <p>我们可能会更新本隐私政策。更新后会在 App 内提示您，并更新本页面的"最后更新"日期。重大变更会以显著方式告知您。</p>
+    </section>
 
-  <section class="card">
-    <h2>十、联系我们</h2>
-    <p>如有任何隐私相关问题，请联系：privacy@yourapp.com</p>
-  </section>
+    <section class="card">
+      <h2>十、联系我们</h2>
+      <p>如有任何隐私相关问题，请联系：<a href="mailto:lancewin@foxmail.com">lancewin@foxmail.com</a></p>
+    </section>
 
-  <section class="card">
-    <h2>附：第三方 SDK 接入声明</h2>
-    <p>本版本（v1.0.0）<strong>不接入任何第三方分析 / 崩溃收集 SDK</strong>，所有数据均存储在用户设备本地。</p>
-  </section>
+    <section class="card">
+      <h2>附：第三方 SDK 接入声明</h2>
+      <p>本版本<strong>不接入任何第三方分析 / 崩溃收集 SDK</strong>，所有数据均存储在用户设备本地，不会传输给任何第三方。</p>
+    </section>
 
-  <section class="card">
-    <h2>附：数据收集声明</h2>
-    <p>基于本政策，本 App 在 App Store「App 隐私」中声明：</p>
-    <ul>
-      <li>不收集任何用于追踪您的数据</li>
-      <li>不收集与您身份关联的数据</li>
-      <li>订阅支付由 Apple 处理，本 App 不接触财务信息</li>
-    </ul>
-    <p>结论：<strong>本 App 不收集数据</strong>。</p>
-  </section>
+    <section class="card">
+      <h2>附：App Store 隐私申报说明</h2>
+      <p>基于本政策，我们在 App Store「App 隐私」中声明如下：</p>
+      <ul>
+        <li>不收集任何用于追踪您身份的数据</li>
+        <li>不收集与您身份关联的数据</li>
+        <li>订阅支付由 Apple 处理，本 App 不接触财务信息</li>
+      </ul>
+      <p>结论：<strong>本 App 不收集数据</strong>。</p>
+    </section>
 
-  <div class="update">让每个值得纪念的日子，都被温柔记住。</div>
+    <div class="update">让每个值得纪念的日子，都被温柔记住。</div>
+  </div>
 </div>
 
-<footer>© 2026 日期提醒 · 保留所有权利</footer>
+<!-- ============ English ============ -->
+<div id="page-en" hidden>
+  <div class="wrap">
+    <section class="card">
+      <p class="muted">Last updated: September 5, 2026</p>
+      <p>We understand how important your personal information is to you, and we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, store and protect your information. It applies equally no matter which country or region you use the App in.</p>
+    </section>
+
+    <section class="card">
+      <h2>1. Information We Collect</h2>
+      <h3>1.1 Information You Provide</h3>
+      <ul>
+        <li><strong>Event data</strong>: events you create, including title, date, notes, emoji and cover color</li>
+        <li><strong>Preferences</strong>: default reminder time, theme mode and app icon selection</li>
+      </ul>
+      <h3>1.2 Information Collected Automatically</h3>
+      <ul>
+        <li><strong>Notification permission status</strong>: used to determine whether local notifications can be sent</li>
+        <li><strong>Subscription status</strong>: your In-App Purchase plan and expiry date (stored locally only)</li>
+      </ul>
+      <h3>1.3 Information We Do NOT Collect</h3>
+      <ul>
+        <li>We do not collect your identity information (no sign-in or account required)</li>
+        <li>We never upload your contacts, photos or location</li>
+        <li>We do not track your behavior</li>
+        <li>We integrate no third-party analytics SDK</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>2. How We Use Your Information</h2>
+      <p>Information we hold is used only to:</p>
+      <ol>
+        <li>Display the events you create inside the App</li>
+        <li>Send local notifications at the reminder time you set</li>
+        <li>Show events on Home Screen widgets, Lock Screen widgets and the Dynamic Island</li>
+        <li>Answer your questions through Siri voice queries</li>
+        <li>Determine your Pro subscription status to unlock the corresponding features</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>3. Storage of Your Information</h2>
+      <h3>3.1 Where Data Is Stored</h3>
+      <ul>
+        <li><strong>All data is stored locally on your device</strong></li>
+        <li>Event data is stored in the App&rsquo;s SQLite database</li>
+        <li>Subscription status is stored in the App&rsquo;s local preferences</li>
+        <li>Widgets and the Dynamic Island read data through shared iOS App Group storage</li>
+      </ul>
+      <h3>3.2 Data Sync</h3>
+      <ul>
+        <li>This version <strong>does not use iCloud sync</strong></li>
+        <li>No data is ever sent to our servers</li>
+        <li>Data does not migrate when you switch devices or reinstall the App (please take note)</li>
+      </ul>
+      <h3>3.3 Data Retention</h3>
+      <ul>
+        <li>Data is retained until you delete an event or uninstall the App</li>
+        <li>All data is automatically removed when the App is uninstalled</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>4. Sharing of Your Information</h2>
+      <p>We <strong>do not</strong> share your information with any third party, including:</p>
+      <ul>
+        <li>No sharing with advertisers</li>
+        <li>No sharing with data analytics companies</li>
+        <li>No sharing with other users</li>
+      </ul>
+      <p>The only exception: when you complete a subscription purchase through Apple&rsquo;s In-App Purchase, Apple handles your payment information. The transaction is managed directly by Apple, and we only receive a subscription status callback.</p>
+    </section>
+
+    <section class="card">
+      <h2>5. Notification Permission</h2>
+      <ul>
+        <li>We only request notification permission when you actively create an event with a reminder</li>
+        <li>You can disable notifications at any time in &ldquo;Settings → Notifications → Day Reminder&rdquo;</li>
+        <li>Disabling notifications does not affect other features of the App</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>6. Siri Permissions</h2>
+      <ul>
+        <li>When you query events with Siri, Siri processes your voice request</li>
+        <li>Voice processing is performed by Apple; we neither receive nor store your voice data</li>
+        <li>You can manage this permission in &ldquo;Settings → Siri &amp; Search&rdquo;</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>7. Children&rsquo;s Privacy</h2>
+      <p>The App is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+    </section>
+
+    <section class="card">
+      <h2>8. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> all data stored in the App (view it directly in the App)</li>
+        <li><strong>Delete</strong> any event (delete it inside the App)</li>
+        <li><strong>Uninstall</strong> the App to erase all local data</li>
+        <li><strong>Manage subscriptions</strong> by cancelling or changing them in &ldquo;Settings → Apple&nbsp;ID → Subscriptions&rdquo;</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>9. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will notify you in the App and update the &ldquo;Last updated&rdquo; date on this page. Material changes will be brought to your attention clearly.</p>
+    </section>
+
+    <section class="card">
+      <h2>10. Contact Us</h2>
+      <p>If you have any questions about privacy, please contact: <a href="mailto:lancewin@foxmail.com">lancewin@foxmail.com</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Appendix: Third-Party SDKs</h2>
+      <p>This version <strong>integrates no third-party analytics or crash-reporting SDK</strong>. All data stays on your device and is never transferred to any third party.</p>
+    </section>
+
+    <section class="card">
+      <h2>Appendix: App Store Privacy Declaration</h2>
+      <p>Based on this policy, the App Store &ldquo;App Privacy&rdquo; section is declared as follows:</p>
+      <ul>
+        <li>No data is collected for tracking</li>
+        <li>No data is collected that is linked to your identity</li>
+        <li>Subscription payments are handled by Apple; the App never touches financial information</li>
+      </ul>
+      <p>Conclusion: <strong>this App collects no data</strong>.</p>
+    </section>
+
+    <div class="update">Every day worth remembering, kept gently in mind.</div>
+  </div>
+</div>
+
+<footer>© 2026 Day Reminder · All rights reserved · <a style="color:inherit" href="./user-agreement.html">Terms of Use</a></footer>
+
+<script>
+(function () {
+  var zh = document.getElementById('page-zh');
+  var en = document.getElementById('page-en');
+  var brandZh = document.getElementById('brand-zh');
+  var brandEn = document.getElementById('brand-en');
+  function pickLang() {
+    var p = new URLSearchParams(location.search);
+    var l = p.get('lang');
+    if (l === 'en' || l === 'zh') return l;
+    var nav = (navigator.language || navigator.userLanguage || 'zh').toLowerCase();
+    if (nav.indexOf('zh') === 0) return 'zh';
+    if (nav.indexOf('en') === 0) return 'en';
+    return 'zh';
+  }
+  function apply(l) {
+    zh.hidden = l !== 'zh';
+    en.hidden = l !== 'en';
+    brandZh.hidden = l !== 'zh';
+    brandEn.hidden = l !== 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('lang-zh').classList.toggle('on', l === 'zh');
+    document.getElementById('lang-en').classList.toggle('on', l === 'en');
+    document.title = l === 'zh' ? document.titleZh : document.titleEn;
+    var links = document.querySelectorAll('footer a[href*=".html"]');
+    for (var i = 0; i < links.length; i++) {
+      var h = links[i].getAttribute('href').split('?')[0];
+      links[i].setAttribute('href', h + '?lang=' + l);
+    }
+  }
+  window.setLang = function (l) {
+    apply(l);
+    try { history.replaceState(null, '', location.pathname + '?lang=' + l); } catch (e) {}
+  };
+  apply(pickLang());
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support · Day Reminder</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f4f6f9;
+    color: #2b2f36;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.85;
+  }
+  header.brand {
+    background: linear-gradient(135deg, #4f6ef7 0%, #8b5cf6 100%);
+    color: #fff;
+    padding: 40px 20px 44px;
+    text-align: center;
+  }
+  header.brand .app { font-size: 14px; letter-spacing: 1px; opacity: .9; }
+  header.brand h1 { margin: 8px 0 0; font-size: 26px; font-weight: 700; }
+
+  .wrap { max-width: 800px; margin: -18px auto 0; padding: 0 16px 72px; }
+  section.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-top: 16px;
+    box-shadow: 0 2px 10px rgba(20, 30, 90, .06);
+  }
+  h2 {
+    font-size: 19px;
+    margin: 4px 0 14px;
+    padding-left: 12px;
+    border-left: 4px solid #4f6ef7;
+  }
+  p { margin: 8px 0; }
+  ul { margin: 8px 0; padding-left: 22px; }
+  ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 6px 0; }
+  details {
+    border: 1px solid #e7ebf2;
+    border-radius: 10px;
+    padding: 6px 16px;
+    margin: 10px 0;
+    background: #fafbfe;
+  }
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 8px 0;
+    outline: none;
+  }
+  details p { margin: 4px 0 12px; color: #4a5161; font-size: 15px; }
+  .contact {
+    text-align: center;
+    background: linear-gradient(135deg, #f0f3ff 0%, #faf5ff 100%);
+    border: 1px solid #e2e6f7;
+  }
+  .contact a {
+    color: #4f6ef7;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .contact a:hover { text-decoration: underline; }
+  .steps { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 6px 0 4px; }
+  .step {
+    flex: 1 1 180px;
+    background: #f7f8fd;
+    border: 1px solid #e7ebf2;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .step .n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: #4f6ef7;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  footer {
+    text-align: center;
+    color: #a0a5b3;
+    font-size: 12px;
+    padding: 28px 16px 40px;
+  }
+  footer a { color: inherit; }
+  @media (max-width: 520px) {
+    section.card { padding: 18px 16px; }
+    header.brand h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="brand">
+  <div class="app">Day Reminder · Never Miss Important Dates</div>
+  <h1>Support</h1>
+</header>
+
+<div class="wrap">
+
+  <section class="card">
+    <h2>Get Started</h2>
+    <p>From creating an event to pinning it on screen, it only takes three steps:</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><p><strong>Create an event</strong><br>Title + date + done</p></div>
+      <div class="step"><span class="n">2</span><p><strong>Set reminders</strong><br>1 / 3 / 7 / 30 / 100 days ahead</p></div>
+      <div class="step"><span class="n">3</span><p><strong>Pin it on screen</strong><br>Dynamic Island / widgets</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>FAQ</h2>
+
+    <details open>
+      <summary>Why didn&rsquo;t I receive a reminder?</summary>
+      <p>Please check two things: ① The reminder switch of the event is on, and the current date is within the advance window you set; ② Notification permission has been granted. Go to &ldquo;Settings → Notifications → Day Reminder&rdquo; to check, and make sure the reminder state on the event&rsquo;s detail page looks normal.</p>
+    </details>
+
+    <details>
+      <summary>How do I put an event on a Home Screen widget / the Dynamic Island?</summary>
+      <p>Widget: long-press your Home Screen → tap &ldquo;+&rdquo; at the top left → search for &ldquo;Day Reminder&rdquo; → choose a Home Screen or Lock Screen size and add it. Dynamic Island: enable &ldquo;Pin to Dynamic Island&rdquo; on the event detail page (supported on iPhone 14 Pro and later). Lock Screen and Dynamic Island display are Pro features.</p>
+    </details>
+
+    <details>
+      <summary>How do I query or create events with Siri?</summary>
+      <p>Query example: &ldquo;Hey Siri, how many days until my birthday?&rdquo; (say the event title clearly). You can also create events by voice, e.g. &ldquo;Hey Siri, create an event in Day Reminder titled Pay rent on the 1st of every month.&rdquo; Siri voice is processed by Apple; this App never stores your voice.</p>
+    </details>
+
+    <details>
+      <summary>Can one event have multiple reminder dates?</summary>
+      <p>Yes. When creating or editing an event, you can select more than one date, and set advance reminders for each date as needed. This is handy for monthly, every-other-day or other recurring schedules.</p>
+    </details>
+
+    <details>
+      <summary>Where is my data stored? Will I lose it when switching phones?</summary>
+      <p>All data (events and settings) is stored locally on your device, and nothing is uploaded to our servers — we run none. Your events also sync through your own iCloud account (Key-Value Store) across devices signed in with the same Apple&nbsp;ID, so after reinstalling the App on a device signed in to iCloud, your events can be restored automatically.</p>
+    </details>
+
+    <details>
+      <summary>How do I upgrade or restore Pro?</summary>
+      <p>Upgrade: open &ldquo;Settings → Upgrade to Pro&rdquo; in the App and pick a plan. Restore: after switching devices or reinstalling, tap &ldquo;Restore Purchases&rdquo; on the Settings page and your subscription will be restored through your Apple&nbsp;ID automatically.</p>
+    </details>
+
+    <details>
+      <summary>How do I manage my subscription or cancel the free trial?</summary>
+      <p>On your iPhone, open &ldquo;Settings → Apple&nbsp;ID → Subscriptions&rdquo; to view, manage or cancel auto-renewal. The yearly plan includes a 7-day free trial; cancelling during the trial costs nothing. If you cancel in the middle of a paid period, your benefits continue until the period ends.</p>
+    </details>
+
+    <details>
+      <summary>How can I request a refund?</summary>
+      <p>Subscriptions and in-app purchases are managed by Apple. Please submit a request on Apple&rsquo;s official refund page at reportaproblem.apple.com. The outcome is determined by Apple.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>Notifications, Missing Sound &amp; Other System Issues</h2>
+    <ul>
+      <li>Reminder not delivered: check that notifications are allowed in &ldquo;Settings → Notifications → Day Reminder&rdquo;, and that Focus / Do Not Disturb is not enabled.</li>
+      <li>Widget not updating: widget refresh is scheduled by the system, which is normal; tap the widget to open the App and trigger a refresh.</li>
+      <li>Dynamic Island not showing: confirm the event has pinning enabled and the device is an iPhone 14 Pro or later (iOS 16.1+).</li>
+    </ul>
+  </section>
+
+  <section class="card contact">
+    <h2>Contact Us</h2>
+    <p>Didn&rsquo;t find the answer above? Feel free to email us — we usually reply within 1-3 business days.</p>
+    <p>📮 Support email: <a href="mailto:lancewin@foxmail.com">lancewin@foxmail.com</a></p>
+    <p style="color:#8a90a0;font-size:13px;">Please include your device model, iOS version, app version and a description of the issue so we can help you faster.</p>
+  </section>
+
+</div>
+
+<footer>© 2026 Day Reminder · All rights reserved · <a href="./privacy-policy-en.html">Privacy Policy</a> · <a href="./user-agreement-en.html">Terms of Use</a></footer>
+
+</body>
+</html>
